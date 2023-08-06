@@ -5,6 +5,8 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
     TokenVerifyView,
 )
+from django.conf import settings
+from django.conf.urls.static import static
 from custom_auth.views import TokenValidateView, LoginView
 
 urlpatterns = [
@@ -16,4 +18,4 @@ urlpatterns = [
     path("api/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
     path("api/token/validate/", TokenValidateView.as_view(), name="token_validate"),
     path("api/token/verify/", TokenVerifyView.as_view(), name="token_verify"),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

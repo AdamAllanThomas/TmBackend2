@@ -3,5 +3,8 @@ from django.db import models
 
 
 class CustomUser(AbstractUser):
-    phone = models.CharField(max_length=15, blank=True, null=True)
-    name = models.CharField(max_length=255, blank=True, null=True)
+    phone = models.CharField(max_length=15, blank=False, null=False, default="")
+    name = models.CharField(max_length=255, blank=False, null=False, default="")
+    profile_image = models.ImageField(
+        upload_to="profile_images/", null=True, blank=True
+    )
