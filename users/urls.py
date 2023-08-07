@@ -19,4 +19,5 @@ urlpatterns = [
         name="user-change-password",
     ),
     path("users/register/", views.UserRegistrationView.as_view(), name="user-register"),
+    path("users/me/", views.UserProfileUpdateView.as_view(), name="user-me"),
 ]

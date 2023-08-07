@@ -31,7 +31,7 @@ class UserRegistrationView(generics.CreateAPIView):
         )
 
 
-class UserProfileUpdateView(generics.UpdateAPIView):
+class UserProfileUpdateView(generics.RetrieveUpdateAPIView):
     queryset = CustomUser.objects.all()
     serializer_class = CustomUserSerializer
     permission_classes = [IsAuthenticated]

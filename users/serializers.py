@@ -13,6 +13,12 @@ class CustomUserSerializer(serializers.ModelSerializer):
             "password",
             "phone",
             "profile_image",
+            "role",
+            "street_address",
+            "city",
+            "state",
+            "country",
+            "postal_code",
         ]
         extra_kwargs = {
             "password": {
