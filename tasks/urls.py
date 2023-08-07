@@ -8,4 +8,9 @@ urlpatterns = [
         views.TaskRetrieveUpdateDestroyView.as_view(),
         name="task-retrieve-update-destroy",
     ),
+    path(
+        "tasks/me/",
+        views.UserTaskListCreateView.as_view(),
+        name="user-task-list-create",
+    ),
 ]
