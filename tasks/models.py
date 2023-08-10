@@ -7,6 +7,7 @@ class Task(models.Model):
         ("New", "New"),
         ("In Progress", "In Progress"),
         ("Completed", "Completed"),
+        ("On Hold", "On Hold"),
     ]
 
     PRIORITY_CHOICES = [
@@ -25,4 +26,7 @@ class Task(models.Model):
         on_delete=models.SET_NULL,
         null=True,
         related_name="tasks_assigned",
+    )
+    project = models.ForeignKey(
+        "projects.Project", on_delete=models.CASCADE, related_name="tasks", null=True
     )
