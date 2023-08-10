@@ -13,4 +13,5 @@ class TaskSerializer(serializers.ModelSerializer):
             "status",
             "priority",
             "assignedTo",
+            "project",
         ]
